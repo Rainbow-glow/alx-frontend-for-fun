@@ -1,0 +1,60 @@
+:root {
+    --toggle-size: 45px;
+    --translateY: -45px;
+  }
+  
+  .toggle {
+    margin: 10rem;
+  }
+  
+  .toggle-label {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .toggle-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: calc(var(--toggle-size) * 2.2);
+    height: 35px;
+    border: 2px solid #c3c3c3;
+    background: #ebebeb;
+    border-radius: 30px;
+    color: #c3c3c3;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+  }
+  
+  .toggle-cb:checked + .toggle-label .toggle-inner {
+    background: #d0546b;
+    color: #fff;
+  }
+  
+  .toggle-cb:checked + .toggle-label .toggle-switch {
+    transform: translateX(calc(var(--toggle-size) * 1.2))
+      translateY(var(--translateY));
+  }
+  
+  .toggle-switch {
+    width: var(--toggle-size);
+    height: var(--toggle-size);
+    border: 2px solid darkgray;
+    background: #fff;
+    border-radius: 100%;
+    position: absolute;
+    top: 40px;
+    transform: translateY(var(--translateY));
+  }
+  
+  .toggle-inner::before {
+    content: 'Yes';
+  }
+  
+  .toggle-inner::after {
+    content: 'No';
+  }
+  
+  .toggle-cb {
+    display: none;
+  }
