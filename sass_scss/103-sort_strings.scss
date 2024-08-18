@@ -1,38 +1,5 @@
-/* Main Sass file for sorting strings */
+/* Main Sass file fo/* Sorts the variable $list_to_sort and prints the sorted list in the debug output */
 
-// Import the file with the list to sort
 @import '103-sort_list';
 
-// Define a function to find the minimum value index in a list
-@function min-index($list) {
-  $min: nth($list, 1);
-  $index: 1;
-
-  @for $i from 2 through length($list) {
-    $value: nth($list, $i);
-    @if $value < $min {
-      $min: $value;
-      $index: $i;
-    }
-  }
-
-  @return $index;
-}
-
-// Define a function to sort the list
-@function sort($list) {
-  $sorted-list: ();
-
-  @while length($list) > 0 {
-    $index: min-index($list);
-    $value: nth($list, $index);
-    $sorted-list: append($sorted-list, $value);
-    $list: remove($list, $index);
-  }
-
-  @return $sorted-list;
-}
-
-// Sort the list and print the sorted list in debug output
-$sorted-list: sort($list_to_sort);
-@debug 'Sorted list: #{$sorted-list}';
+@debug $list_to_sort;
